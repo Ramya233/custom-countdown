@@ -1,0 +1,45 @@
+Html and css
+1) Adding a video background to the page. Download the video you want, it's big so compress it.
+2) Make the input UI -> Make a countdown UI -> Make a waring UI(add animation and transform)
+
+
+javascript
+1) Add hidden to the other containers and unhide the input container
+2) Make a javascript DOM element for every html element that changes 
+3) You should only be able to choose a future data and not a previous data 
+   For this -> There are some additional attributes that we can addd with the input type="data"
+               you can set the minimum and maxi -> which has to be set dynamical instead of setting is already
+
+
+4) Var d = new Date() -> to get todays data
+   toISOString -> to follow a standard format to set data.
+   const today = new Date().toISOString().split('T')[0];
+
+   set the attribute of the date picker to dynamically take todays date.
+
+5) We want to get the data from the form on the submit of the button 
+ To prevent the default submit behaviour we are using  e.preventDefault();
+
+ updateCountdown(e) -> function to updateCountdown
+
+ let countdownTitle = '';
+let countdownDate = '';
+and assign these variables the current date  and tittle countdownTitle = e.srcElement[0].value;
+                                                        countdownDate = e.srcElement[1].value;
+
+
+6) How to use this info to build an actual countdown.
+
+ in the data object page -> we have a method called getTime().
+ WE have to do some Math because getTime will return in miliseconds
+
+ let countdownValue = Date;
+
+ within updateCountdown function -> we are going to get the number version of date and update our DOM
+  countdownValue = new Date(countdownDate).getTime();
+    updateDOM();
+
+Remove the hardcoded values in index.html
+Make all const for the ui in javascript
+
+Create the updateDOM() -> 1s = 1000ms
